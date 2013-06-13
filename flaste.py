@@ -24,14 +24,11 @@ def showpaste(id, lexer=None):
 	else:
 		return "Invalid ID"
 
-@app.route("/submit/", methods=['GET', 'POST'])
+@app.route("/submit/", methods=['POST'])
 def paste():
-	if request.method == 'POST':	# send a paste
-		lexer = pyg.determine_lexer(request.form['content'], request.form['source'])
-		id_ret = db.savepaste(request.form['source'], request.form['content'], lexer)
-		return redirect(url_for('showpaste', id=id_ret))
-	else:
-		return "" # This shouldn't happen
+	lexer = pyg.determine_lexer(request.form['content'], request.form['source'])
+	id_ret = db.savepaste(request.form['source'], request.form['content'], lexer)
+	return redirect(url_for('showpaste', id=id_ret))
 
 @app.route("/static/css/pygments.css")
 def returncss():
