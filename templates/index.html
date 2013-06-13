@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>flaste</title>
+		<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Cousine' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<form action="/submit/" method="post">
+			<input type="hidden" name="source" value="web">
+			<textarea autofocus id="src" name="content"></textarea>
+			<input id="btn" type="submit" value="paste">
+		</form>
+	</body>
+</html>

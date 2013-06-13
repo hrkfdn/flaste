@@ -1,0 +1,129 @@
+* {
+	margin: 0; padding: 0;
+	outline: 0;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+}
+body {
+	background: #bdc3c7;
+	height: 100%;
+}
+form {
+	height: 100%;
+}
+
+#src {
+	font-family: 'Cousine', monospace;
+	width: 100%; height: 100%;
+	padding: 15px;
+
+	border-radius: 8px;
+	border: 5px solid #bdc3c7;
+	-webkit-resize: none;
+	-moz-resize: none;
+	resize: none;
+	background: #ecf0f1;
+	color: #999;
+}
+
+#src:focus {
+	color: #444;
+}
+
+#btn {
+	position: fixed;
+	bottom: 20px; right: 20px;
+	padding: 5px 8px;
+
+	border: none;
+	border-radius: 4px;
+	font-size: 1em;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+	filter: alpha(opacity=75);
+	opacity: .75;
+	background: #95a5a6;
+	color: #ecf0f1;
+
+	-webkit-animation: fadein 1s;
+	-moz-animation: fadein 1s;
+	-ms-animation: fadein 1s;
+	-o-animation: fadein 1s;
+	animation: fadein 1s;
+}
+
+#btn:hover,#btn:focus {
+	bottom: 23px; right: 20px;
+	padding: 3px 8px;
+
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+	background: #2ecc71;
+	text-shadow: 0 2px 2px #208D4E;
+
+	-webkit-box-shadow: 0 3px 0 #208D4E,0 -1px 0 #69DD9A,0 -2px 0 #2ecc71;
+	box-shadow: 0 3px 0 #208D4E,0 -1px 0 #69DD9A,0 -2px 0 #2ecc71;
+	color: #fff;
+}
+#btn:active {
+	bottom: 22px; right: 20px;
+
+	-webkit-box-shadow: 0 2px 0 #208D4E,0 -1px 0 #69DD9A,0 -2px 0 #2ecc71;
+	box-shadow: 0 2px 0 #208D4E,0 -1px 0 #69DD9A,0 -2px 0 #2ecc71;
+}
+
+@keyframes "fadein" {
+ from {
+    background: red;
+ }
+ to {
+    background: #95a5a6;
+ }
+
+}
+
+@-moz-keyframes fadein {
+ from {
+   background: red;
+ }
+ to {
+   background: #95a5a6;
+ }
+
+}
+
+@-webkit-keyframes "fadein" {
+ from {
+   background: red;
+ }
+ to {
+   background: #95a5a6;
+ }
+
+}
+
+@-ms-keyframes "fadein" {
+ from {
+   background: red;
+ }
+ to {
+   background: #95a5a6;
+ }
+
+}
+
+@-o-keyframes "fadein" {
+ from {
+   background: red;
+ }
+ to {
+   background: #95a5a6;
+ }
+
+}
