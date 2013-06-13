@@ -22,7 +22,7 @@ def showpaste(id, lexer=None):
 			highlighted = Markup(pyg.highlight(paste[2], lexer))
 			return render_template("paste.html", source=paste[1], content=highlighted, date=time.ctime(paste[3]), dropdown=Markup(pyg.generate_dropdown(lexer)))
 	else:
-		return "Invalid ID"
+		return redirect(url_for('index')) 
 
 @app.route("/submit/", methods=['POST'])
 def paste():
