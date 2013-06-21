@@ -23,4 +23,4 @@ def base_encode(integer, base=BASE_LIST):
 	return ret
 
 def crc(string):
-	return zlib.crc32(string) & 0xFFFFFFFF
+	return zlib.crc32(string.encode("UTF-8")) & 0xFFFFFFFF
