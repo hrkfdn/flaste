@@ -4,7 +4,9 @@
 url = "http://p.diff.cc"
 # END OF CONFIGURATION
 
-import sys, urllib, urllib2
+import sys
+import urllib.request
+import urllib.parse
 
 if len(sys.argv) > 1:
 	try:
@@ -20,15 +22,15 @@ else:
 content = source.read()
 
 postdata = { "source" : filename, "content" : content }
-urlencoded = urllib.urlencode(postdata)
-req = urllib2.Request(url + "/submit/", urlencoded)
+urlencoded = urllib.parse.urlencode(postdata)
+req = urllib.request.Request(url + "/submit/", urlencoded.encode("utf-8"))
 req.add_header("Content-Type", "application/x-www-form-urlencoded")
 
 try:
 	print("Pasting to " + url + " ..")
-	response = urllib2.urlopen(req)
-except urllib2.URLError as e:
+	response = urllib.request.urlopen(req)
+except urllib.error.URLError as e:
 	print("I could not submit the data. Reason: " + e.strerror)
 	sys.exit()
 
-print "Link: " + response.geturl()
+print("Link: " + response.geturl())
