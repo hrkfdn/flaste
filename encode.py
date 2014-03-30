@@ -1,5 +1,5 @@
 import string, zlib
-BASE_LIST = string.digits + string.letters + '-_'
+BASE_LIST = string.digits + string.ascii_letters + '-_'
 BASE_DICT = dict((c, i) for i, c in enumerate(BASE_LIST))
 
 def base_decode(string, reverse_base=BASE_DICT):
@@ -18,7 +18,7 @@ def base_encode(integer, base=BASE_LIST):
 	ret = ''
 	while integer != 0:
 		ret = base[integer % length] + ret
-		integer /= length
+		integer = int(integer / length)
 
 	return ret
 
